@@ -1,6 +1,19 @@
--- DISCLAIMER: This specific implementation was designed to work with
--- CC Lua, I do not take any responsibility for anything that may happen
--- in or out of the CC environment. But it shouldn't not work in other envs
+-- CC-LCI (Computercraft LOLCODE Interpreter)
+-- Interprets a given LOLCODE source file
+-- Copyright (C) 2016  Bryan Becar AKA Incinirate
+--
+-- This program is free software: you can redistribute it and/or modify
+-- it under the terms of the GNU General Public License as published by
+-- the Free Software Foundation, either version 3 of the License, or
+-- (at your option) any later version.
+--
+-- This program is distributed in the hope that it will be useful,
+-- but WITHOUT ANY WARRANTY; without even the implied warranty of
+-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-- GNU General Public License for more details.
+--
+-- You should have received a copy of the GNU General Public License
+-- along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 local version = 0.01
 
