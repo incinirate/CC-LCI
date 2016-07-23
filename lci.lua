@@ -112,7 +112,7 @@ do
 	for i=1, #rawargs do
 		local str = rawargs[i]
 		local misjudge = false
-		local hasSook = false
+		local hasSought = false
 		if seek > 0 then
 			if str:sub(1, 1) == "-" or str:sub(1, 2) == "--" then
 				--Not gonna supply that arg I guess
@@ -127,15 +127,17 @@ do
 			if seek <= 0 then
 				done = true
 			end
-			if done and currc then
+			if done then
 				pargs.options[#pargs.options + 1] = {name = seekf, args = seeko}
-				currc(unpack(seeko))
-				currc = nil
+				if currc then
+					currc(unpack(seeko))
+					currc = nil
+				end
 			end
-			hasSook = true
+			hasSought = true
 		end
 
-		if misjudge or (seek <= 0 and not hasSook) then --should never be less than 0 but just to be safe
+		if misjudge or (seek <= 0 and not hasSought) then --should never be less than 0 but just to be safe
 			if str:sub(1, 2) == "--" then
 				local opcode = str:sub(3)
 				local ref = options[opcode]
@@ -194,7 +196,9 @@ do
 	end
 	if seek > 0 then
 		--Alrighty then
-		currc(unpack(seeko))
+		if currc then
+			currc(unpack(seeko))
+		end
 	end
 	print(textutils.serialize(pargs))
 end
