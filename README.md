@@ -23,8 +23,12 @@ There are also several other ways to use *CC-LCI* from the commandline.
 
 **Syntax**
 ```
-lci [-q] [--quiet] [sourcefile]
+lci [-hqd] [-l <logfile>] [--help|--quiet|--debug|--log <logfile>] [sourcefile]
 ```
-Option | Alias | Description
------- | ----- | -----------
-`--quiet` | `-q` | Silences the interpreter from printing `VISIBLE`
+ Option | Alias | Description
+--------| ----- | -----------
+`sourcefile` | | Relative path to the *LOLCODE* file the interpreter will read from
+`--help` | `-h` | Prints out a help page 
+`--quiet` | `-q` | Silences the interpreter from printing `VISIBLE` statements
+`--debug` | `-d` | Provides detailed information about what the interpreter is doing
+`--log` | `-l` | Exports whatever is printed to the console to the specified `logfile`
